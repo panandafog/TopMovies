@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxj-Cm-fVI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="N2l-jt-oIA">
+            <objects>
+                <navigationController id="bxj-Cm-fVI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="381-XT-neX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sCJ-sG-sbj" kind="relationship" relationship="rootViewController" id="tGZ-pN-MMX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7RK-YX-QDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="12"/>
+        </scene>
+        <!--TopMovies-->
+        <scene sceneID="keH-jo-16T">
+            <objects>
+                <viewController id="sCJ-sG-sbj" customClass="MainViewController" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l6o-NY-gfC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vyi-M4-RRq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MovieCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="269" id="AiX-xc-ZsD" customClass="MovieCell" customModule="TopMovies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="269"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AiX-xc-ZsD" id="Y2g-TI-OCA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnA-d2-QfZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="269"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Spider-Man: Into the Spider-Verse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-sO-nm3">
+                                                    <rect key="frame" x="154.5" y="11" width="239.5" height="49"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="December 14, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-Ak-bk8">
+                                                    <rect key="frame" x="154.5" y="68" width="239.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swR-1v-JEy">
+                                                    <rect key="frame" x="274" y="228" width="120" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="SvN-Cm-Frj"/>
+                                                        <constraint firstAttribute="height" constant="30" id="pVb-S7-AGu"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Schedule viewing"/>
+                                                    <connections>
+                                                        <action selector="scheduleViewingButtonPressed:" destination="AiX-xc-ZsD" eventType="touchUpInside" id="SY9-OB-Cud"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-yh-bai">
+                                                    <rect key="frame" x="155" y="97" width="239" height="123"/>
+                                                    <string key="text">Miles Morales is juggling his life between
+being a high school student and being a
+spider-man. When Wilson "Kingpin" Fisk
+uses a super collider, others from across the
+Spider-Verse are transported to this
+dimension.</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vhc-Ak-bk8" firstAttribute="top" secondItem="MV9-sO-nm3" secondAttribute="bottom" constant="8" symbolic="YES" id="2QW-aO-so2"/>
+                                                <constraint firstAttribute="bottom" secondItem="gnA-d2-QfZ" secondAttribute="bottom" id="3xO-rD-5gm"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="top" secondItem="dnc-yh-bai" secondAttribute="bottom" constant="8" symbolic="YES" id="6qD-Ac-c1r"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="6qg-tz-8D2"/>
+                                                <constraint firstItem="MV9-sO-nm3" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="13.5" id="EbM-E0-UW1"/>
+                                                <constraint firstItem="MV9-sO-nm3" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="topMargin" id="FGT-g1-OZe"/>
+                                                <constraint firstItem="gnA-d2-QfZ" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="top" id="H2r-mO-6Mi"/>
+                                                <constraint firstItem="dnc-yh-bai" firstAttribute="top" secondItem="vhc-Ak-bk8" secondAttribute="bottom" constant="8" symbolic="YES" id="HQv-xg-VLr"/>
+                                                <constraint firstItem="vhc-Ak-bk8" firstAttribute="leading" secondItem="MV9-sO-nm3" secondAttribute="leading" id="IbG-kr-kJD"/>
+                                                <constraint firstItem="dnc-yh-bai" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="PGB-Pe-52K"/>
+                                                <constraint firstItem="gnA-d2-QfZ" firstAttribute="leading" secondItem="Y2g-TI-OCA" secondAttribute="leading" id="U3V-ZO-ctD"/>
+                                                <constraint firstItem="dnc-yh-bai" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="fNe-e4-VFb"/>
+                                                <constraint firstItem="vhc-Ak-bk8" firstAttribute="trailing" secondItem="MV9-sO-nm3" secondAttribute="trailing" id="gzZ-o0-Cqm"/>
+                                                <constraint firstItem="MV9-sO-nm3" firstAttribute="width" secondItem="gnA-d2-QfZ" secondAttribute="width" multiplier="1.7" id="hoR-NJ-25a"/>
+                                                <constraint firstItem="MV9-sO-nm3" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="vl4-1B-PCu"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="bottom" secondItem="Y2g-TI-OCA" secondAttribute="bottomMargin" id="x5y-Ng-BME"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="vhc-Ak-bk8" id="pjj-b8-UwB"/>
+                                            <outlet property="overviewLabel" destination="dnc-yh-bai" id="2HQ-8i-Zch"/>
+                                            <outlet property="posterImageView" destination="gnA-d2-QfZ" id="7ax-CE-U3e"/>
+                                            <outlet property="titleLabel" destination="MV9-sO-nm3" id="TlS-u7-2RO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S8c-x7-EKj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TopMovies" id="TzD-jX-RRD"/>
+                    <connections>
+                        <outlet property="tableView" destination="Vyi-M4-RRq" id="ByR-xU-EAb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aon-Bh-J6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202.8985507246377" y="10.714285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

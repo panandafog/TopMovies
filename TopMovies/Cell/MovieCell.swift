@@ -1,0 +1,56 @@
+//
+//  MovieCell.swift
+//  TopMovies
+//
+//  Created by panandafog on 22.04.2021.
+//
+
+import Kingfisher
+import UIKit
+
+class MovieCell: UITableViewCell {
+    
+    private var movie: MovieModel?
+    private var mainController: MainViewController?
+    
+    @IBOutlet var posterImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var overviewLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImageView.image = nil
+        posterImageView.kf.cancelDownloadTask()
+    }
+
+    func setup(with movie: MovieModel, controller: MainViewController, index: IndexPath) {
+        self.movie = movie
+        self.mainController = controller
+        
+        titleLabel.text = movie.title
+        dateLabel.text = movie.releaseDate
+        overviewLabel.text = movie.overview
+        
+        guard let url = movie.posterURL else { return }
+        posterImageView.kf.setImage(with: url) { result in
+            switch result {
+            case .success(let value):
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @IBAction func scheduleViewingButtonPressed(_ sender: UIButton) {
+        
+        guard let viewController = UIStoryboard(name: "AddNotification", bundle: nil)
+            .instantiateViewController(withIdentifier: "AddNotificationController") as? AddNotificationController else {
+                return
+        }
+        
+        viewController.movie = self.movie
+        mainController?.navigationController?.present(viewController, animated: true)
+    }
+}

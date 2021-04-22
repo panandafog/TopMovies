@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detailed Movie Info Controller-->
+        <scene sceneID="keI-9u-o7T">
+            <objects>
+                <viewController restorationIdentifier="DetailedMovieInfoViewController" storyboardIdentifier="DetailedMovieInfoViewController" id="tHr-Hs-7v2" customClass="DetailedMovieInfoController" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Twz-sO-CLD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-r1-pUb">
+                                <rect key="frame" x="147" y="832" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jus-ks-qv8"/>
+                                    <constraint firstAttribute="width" constant="120" id="YrU-L9-yaW"/>
+                                </constraints>
+                                <state key="normal" title="Schedule viewing"/>
+                                <connections>
+                                    <action selector="scheduleViewingButtonPressed:" destination="tHr-Hs-7v2" eventType="touchUpInside" id="M4j-mm-snY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="saj-jE-92x">
+                                <rect key="frame" x="20" y="64" width="144.5" height="204.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spider-Man: Into the Spider-Verse" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="War-2S-6Ge">
+                                <rect key="frame" x="177.5" y="64" width="216.5" height="67.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 14, 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-09-aq2">
+                                <rect key="frame" x="177.5" y="247.5" width="216.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="y3A-i4-Jrn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-mt-ZVI">
+                                <rect key="frame" x="20" y="288.5" width="374" height="535.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-1z-AEU">
+                                        <rect key="frame" x="8" y="8" width="358" height="130.5"/>
+                                        <string key="text">Miles Morales is juggling his life between
+being a high school student and being a
+spider-man. When Wilson "Kingpin" Fisk
+uses a super collider, others from across the
+Spider-Verse are transported to this
+dimension.</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jOv-E7-xV4" firstAttribute="bottom" secondItem="vd0-1z-AEU" secondAttribute="bottom" constant="8" id="F9E-3w-9h3"/>
+                                    <constraint firstItem="vd0-1z-AEU" firstAttribute="leading" secondItem="jOv-E7-xV4" secondAttribute="leading" constant="8" id="Oze-xY-UIr"/>
+                                    <constraint firstItem="jOv-E7-xV4" firstAttribute="trailing" secondItem="vd0-1z-AEU" secondAttribute="trailing" constant="8" id="Z6c-8d-Chz"/>
+                                    <constraint firstItem="w4C-He-CrY" firstAttribute="trailing" secondItem="vd0-1z-AEU" secondAttribute="trailing" constant="8" id="cNz-Xp-qyl"/>
+                                    <constraint firstItem="vd0-1z-AEU" firstAttribute="leading" secondItem="w4C-He-CrY" secondAttribute="leading" constant="8" id="lng-4n-GU1"/>
+                                    <constraint firstItem="vd0-1z-AEU" firstAttribute="top" secondItem="jOv-E7-xV4" secondAttribute="top" constant="8" id="rPG-XF-VLB"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="jOv-E7-xV4"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="w4C-He-CrY"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ncB-yb-7w0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="saj-jE-92x" firstAttribute="height" secondItem="ncB-yb-7w0" secondAttribute="height" multiplier="0.25" id="302-8t-bcu"/>
+                            <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="War-2S-6Ge" secondAttribute="trailing" constant="20" id="4Gd-Ax-uIi"/>
+                            <constraint firstItem="PX3-mt-ZVI" firstAttribute="leading" secondItem="ncB-yb-7w0" secondAttribute="leading" constant="20" id="6qP-n7-d5d"/>
+                            <constraint firstItem="kZz-09-aq2" firstAttribute="leading" secondItem="saj-jE-92x" secondAttribute="trailing" constant="13" id="7R9-Pj-o2Q"/>
+                            <constraint firstItem="PX3-mt-ZVI" firstAttribute="top" secondItem="saj-jE-92x" secondAttribute="bottom" constant="20" id="Hkk-gB-F2T"/>
+                            <constraint firstItem="saj-jE-92x" firstAttribute="top" secondItem="ncB-yb-7w0" secondAttribute="top" constant="20" id="JBM-bo-9RJ"/>
+                            <constraint firstItem="WGT-r1-pUb" firstAttribute="top" secondItem="PX3-mt-ZVI" secondAttribute="bottom" constant="8" symbolic="YES" id="MdP-Xo-Fsh"/>
+                            <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="PX3-mt-ZVI" secondAttribute="trailing" constant="20" id="QXA-Pd-sUQ"/>
+                            <constraint firstItem="WGT-r1-pUb" firstAttribute="centerX" secondItem="Twz-sO-CLD" secondAttribute="centerX" id="Utq-yz-xTl"/>
+                            <constraint firstItem="kZz-09-aq2" firstAttribute="bottom" secondItem="saj-jE-92x" secondAttribute="bottom" id="XpD-5Y-fSa"/>
+                            <constraint firstItem="WGT-r1-pUb" firstAttribute="bottom" secondItem="ncB-yb-7w0" secondAttribute="bottom" id="bu0-ZL-Ztm"/>
+                            <constraint firstItem="War-2S-6Ge" firstAttribute="width" secondItem="saj-jE-92x" secondAttribute="width" multiplier="1.5" id="cmi-im-xCt"/>
+                            <constraint firstItem="War-2S-6Ge" firstAttribute="leading" secondItem="saj-jE-92x" secondAttribute="trailing" constant="13" id="d5e-mE-AWV"/>
+                            <constraint firstItem="kZz-09-aq2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="War-2S-6Ge" secondAttribute="bottom" constant="10" id="dFt-Vv-xJu"/>
+                            <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="kZz-09-aq2" secondAttribute="trailing" constant="20" id="gl6-Wc-Cs9"/>
+                            <constraint firstItem="saj-jE-92x" firstAttribute="leading" secondItem="ncB-yb-7w0" secondAttribute="leading" constant="20" id="uQu-Hj-ieM"/>
+                            <constraint firstItem="War-2S-6Ge" firstAttribute="top" secondItem="ncB-yb-7w0" secondAttribute="top" constant="20" id="xwU-bz-KYN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="kZz-09-aq2" id="npE-Br-k1c"/>
+                        <outlet property="overviewLabel" destination="vd0-1z-AEU" id="VN3-PU-fQP"/>
+                        <outlet property="posterImageView" destination="saj-jE-92x" id="FOr-v4-dfs"/>
+                        <outlet property="titleLabel" destination="War-2S-6Ge" id="0Kb-H9-Jfu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gO-hm-ALq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
