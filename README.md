@@ -9,12 +9,12 @@ Allows user to schedule movie watching.
 - Xcode 9.3
 - In some countries, a VPN is required for correct access to the API. In that case you will get following error:
 
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/timeout.PNG" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/timeout.png" width="300">
 
 ## Screenshots
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen1.PNG" width="300">
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen2.PNG" width="300">
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen3.PNG" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen1.png" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen2.png" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/en/screen3.png" width="300">
 
 ### This document in other languages
 
