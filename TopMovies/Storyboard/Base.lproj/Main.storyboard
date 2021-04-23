@@ -75,6 +75,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <action selector="dateChanged:" destination="r1f-3d-JQ7" eventType="valueChanged" id="fRE-mP-Kme"/>
+                                                        <action selector="exitFromDatePicker:" destination="r1f-3d-JQ7" eventType="editingDidEnd" id="tix-Ch-tgM"/>
                                                     </connections>
                                                 </datePicker>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-Ya-JeB">
@@ -145,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="-980" y="11"/>
         </scene>
-        <!--TopMovies-->
+        <!--Top Movies-->
         <scene sceneID="keH-jo-16T">
             <objects>
                 <viewController id="sCJ-sG-sbj" customClass="MainViewController" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,14 +169,14 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnA-d2-QfZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="141" height="269"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Spider-Man: Into the Spider-Verse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-sO-nm3">
-                                                    <rect key="frame" x="154.5" y="11" width="239.5" height="49"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Spider-Man" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-sO-nm3">
+                                                    <rect key="frame" x="154.5" y="11" width="239.5" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 14, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-Ak-bk8">
-                                                    <rect key="frame" x="154.5" y="68" width="239.5" height="21"/>
+                                                    <rect key="frame" x="154.5" y="43" width="239.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="tMJ-WP-NiG"/>
                                                     </constraints>
@@ -183,10 +184,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swR-1v-JEy">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swR-1v-JEy">
                                                     <rect key="frame" x="274" y="228" width="120" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="SvN-Cm-Frj"/>
                                                         <constraint firstAttribute="height" constant="30" id="pVb-S7-AGu"/>
                                                     </constraints>
                                                     <state key="normal" title="Schedule viewing"/>
@@ -195,7 +195,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-yh-bai">
-                                                    <rect key="frame" x="155" y="97" width="239" height="123"/>
+                                                    <rect key="frame" x="155" y="76" width="239" height="144"/>
                                                     <string key="text">Miles Morales is juggling his life between
 being a high school student and being a
 spider-man. When Wilson "Kingpin" Fisk
@@ -209,7 +209,6 @@ dimension.</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-p3-IWR">
                                                     <rect key="frame" x="155" y="233" width="40" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="NJ2-J4-XiK"/>
                                                         <constraint firstAttribute="height" constant="15" id="z0I-og-bcZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -223,7 +222,7 @@ dimension.</string>
                                             <constraints>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="top" secondItem="MV9-sO-nm3" secondAttribute="bottom" constant="8" symbolic="YES" id="2QW-aO-so2"/>
                                                 <constraint firstAttribute="bottom" secondItem="gnA-d2-QfZ" secondAttribute="bottom" id="3xO-rD-5gm"/>
-                                                <constraint firstItem="swR-1v-JEy" firstAttribute="top" secondItem="dnc-yh-bai" secondAttribute="bottom" constant="8" symbolic="YES" id="6qD-Ac-c1r"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dnc-yh-bai" secondAttribute="bottom" constant="8" symbolic="YES" id="6qD-Ac-c1r"/>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="6qg-tz-8D2"/>
                                                 <constraint firstItem="HkJ-W9-HxN" firstAttribute="top" secondItem="Nom-p3-IWR" secondAttribute="bottom" constant="2" id="AzB-eK-YKh"/>
                                                 <constraint firstItem="HkJ-W9-HxN" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="CTR-TM-iri"/>
@@ -231,13 +230,14 @@ dimension.</string>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nom-p3-IWR" secondAttribute="trailing" constant="5" id="FBE-Ea-7OA"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="topMargin" id="FGT-g1-OZe"/>
                                                 <constraint firstItem="gnA-d2-QfZ" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="top" id="H2r-mO-6Mi"/>
-                                                <constraint firstItem="dnc-yh-bai" firstAttribute="top" secondItem="vhc-Ak-bk8" secondAttribute="bottom" constant="8" symbolic="YES" id="HQv-xg-VLr"/>
+                                                <constraint firstItem="dnc-yh-bai" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vhc-Ak-bk8" secondAttribute="bottom" constant="8" symbolic="YES" id="HQv-xg-VLr"/>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="leading" secondItem="MV9-sO-nm3" secondAttribute="leading" id="IbG-kr-kJD"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="HkJ-W9-HxN" secondAttribute="bottom" constant="4" id="Kx7-9q-TIa"/>
                                                 <constraint firstItem="dnc-yh-bai" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="PGB-Pe-52K"/>
                                                 <constraint firstItem="gnA-d2-QfZ" firstAttribute="leading" secondItem="Y2g-TI-OCA" secondAttribute="leading" id="U3V-ZO-ctD"/>
                                                 <constraint firstItem="Nom-p3-IWR" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="VCu-92-slZ"/>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="leading" secondItem="HkJ-W9-HxN" secondAttribute="trailing" constant="25" id="X9o-KI-cer"/>
+                                                <constraint firstItem="dnc-yh-bai" firstAttribute="centerY" secondItem="Y2g-TI-OCA" secondAttribute="centerY" multiplier="1.1" id="Z6p-jp-ogJ"/>
                                                 <constraint firstItem="dnc-yh-bai" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="fNe-e4-VFb"/>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="trailing" secondItem="MV9-sO-nm3" secondAttribute="trailing" id="gzZ-o0-Cqm"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="width" secondItem="gnA-d2-QfZ" secondAttribute="width" multiplier="1.7" id="hoR-NJ-25a"/>
@@ -261,7 +261,7 @@ dimension.</string>
                         <viewLayoutGuide key="safeArea" id="S8c-x7-EKj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TopMovies" id="TzD-jX-RRD"/>
+                    <navigationItem key="navigationItem" title="Top Movies" id="TzD-jX-RRD"/>
                     <connections>
                         <outlet property="tableView" destination="Vyi-M4-RRq" id="ByR-xU-EAb"/>
                     </connections>

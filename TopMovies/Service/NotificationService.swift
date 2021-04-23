@@ -6,15 +6,19 @@
 //
 
 import UserNotifications
+import UIKit
 
 class NotificationService {
     
     private let movieWatchReminderID = "movieWatchReminder"
-    private let movieWatchReminderTitle = "Time to watch a movie"
+    private let movieWatchReminderTitle = "movieWatchReminderTitle".localized
     
-    func scheduleMovieWatchNotification(movie: MovieModel, date: Date) {
+    func scheduleMovieWatchNotification(movie: MovieModel,
+                                        date: Date,
+                                        controller: UIViewController?) -> Bool {
         guard date > Date() else {
-            return
+            showIncorrectDateAlert(controller: controller)
+            return false
         }
         
         let content = UNMutableNotificationContent()
@@ -24,7 +28,7 @@ class NotificationService {
         content.sound = UNNotificationSound.default
         content.badge = 1
         
-        createNotification(content: content, date: date)
+        return createNotification(content: content, date: date, controller: nil)
     }
     
     func getScheduledMovieWatchNotifications(completion: @escaping ([UNNotificationRequest]) -> ()) {
@@ -50,15 +54,26 @@ class NotificationService {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
     }
     
-    func updateScheduledMovieWatchNotification(newDate: Date, notification: UNNotificationRequest) {
+    func updateScheduledMovieWatchNotification(newDate: Date,
+                                               notification: UNNotificationRequest,
+                                               controller: UIViewController?) -> Bool {
+        guard newDate > Date() else {
+            showIncorrectDateAlert(controller: controller)
+            return false
+        }
         
         removeScheduledMovieWatchNotification([notification])
-        createNotification(content: UNMutableNotificationContent(notification.content), date: newDate)
+        return createNotification(content: UNMutableNotificationContent(notification.content),
+                           date: newDate,
+                           controller: nil)
     }
     
-    private func createNotification(content: UNMutableNotificationContent, date: Date) {
+    private func createNotification(content: UNMutableNotificationContent,
+                                    date: Date,
+                                    controller: UIViewController?) -> Bool {
         guard date > Date() else {
-            return
+            showIncorrectDateAlert(controller: controller)
+            return false
         }
         
         let dateComponents = Calendar.current.dateComponents(
@@ -83,6 +98,20 @@ class NotificationService {
                 print("success")
             }
         })
+        return true
+    }
+    
+    private func showIncorrectDateAlert(controller: UIViewController?) {
+        guard let controller = controller else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "incorrectDateAlertTitle".localized,
+            message: "incorrectDateAlertMessage".localized,
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        controller.present(alert, animated: true, completion: nil)
     }
 }
 

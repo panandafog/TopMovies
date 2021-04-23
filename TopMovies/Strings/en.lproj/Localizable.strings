@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TopMovies
+
+  Created by panandafog on 23.04.2021.
+  
+*/
+
+// MARK: Notifications
+
+"movieWatchReminderTitle" = "Time to watch a movie";
+
+// MARK: Alerts
+
+"noInternetAlertTitle" = "Not connected to the internet";
+"noInternetAlertMessage" = "Please check internet connection";
+
+"timeoutAlertTitle" = "Request timeout";
+"timeoutAlertMessage" = "Please check internet connection or try to use VPN";
+
+"unknownErrorAlertTitle" = "Unknown error";
+
+
+"incorrectDateAlertTitle" = "Incorrect date and time";
+"incorrectDateAlertMessage" = "Please select date and time after actual";
+
+// MARK: MovieService
+
+"language" = "en";

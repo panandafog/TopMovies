@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TopMovies
+
+  Created by panandafog on 23.04.2021.
+  
+*/
+
+// MARK: Notifications
+
+"movieWatchReminderTitle" = "Самое время посмотреть фильм";
+
+// MARK: Alerts
+
+"noInternetAlertTitle" = "Отсутствует интернет-соединение";
+"noInternetAlertMessage" = "Пожалуйста, проверьте качество интернет-соединения";
+
+"timeoutAlertTitle" = "Время ожидания запроса превышено";
+"timeoutAlertMessage" = "Пожалуйста, проверьте качество интернет-соединения, или попробуйте использовать VPN";
+
+"unknownErrorAlertTitle" = "Неизвестная ошибка";
+
+
+"incorrectDateAlertTitle" = "Некорректная дата и время";
+"incorrectDateAlertMessage" = "Пожалуйста, выберите дату и время после текущих";
+
+// MARK: MovieService
+
+"language" = "ru";

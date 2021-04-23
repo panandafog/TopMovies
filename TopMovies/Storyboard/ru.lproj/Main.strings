@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Spider-Man: Into the Spider-Verse"; ObjectID = "MV9-sO-nm3"; */
+"MV9-sO-nm3.text" = "Spider-Man: Into the Spider-Verse";
+
+/* Class = "UILabel"; text = "Rating:"; ObjectID = "Nom-p3-IWR"; */
+"Nom-p3-IWR.text" = "Рейтинг:";
+
+/* Class = "UINavigationItem"; title = "TopMovies"; ObjectID = "TzD-jX-RRD"; */
+"TzD-jX-RRD.title" = "Лучшие фильмы";
+
+/* Class = "UILabel"; text = "Spider-Man: Into the Spider-Verse"; ObjectID = "Uz0-zE-piN"; */
+"Uz0-zE-piN.text" = "Spider-Man: Into the Spider-Verse";
+
+/* Class = "UILabel"; text = "Miles Morales is juggling his life between\nbeing a high school student and being a\nspider-man. When Wilson \"Kingpin\" Fisk\nuses a super collider, others from across the\nSpider-Verse are transported to this\ndimension."; ObjectID = "dnc-yh-bai"; */
+"dnc-yh-bai.text" = "Miles Morales is juggling his life between\nbeing a high school student and being a\nspider-man. When Wilson \"Kingpin\" Fisk\nuses a super collider, others from across the\nSpider-Verse are transported to this\ndimension.";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "gkU-Cl-MDU"; */
+"gkU-Cl-MDU.title" = "Фильмы";
+
+/* Class = "UINavigationItem"; title = "Sheduled Notifications"; ObjectID = "q9m-we-lnc"; */
+"q9m-we-lnc.title" = "Запланированные уведомления";
+
+/* Class = "UITabBarItem"; title = "Schedule"; ObjectID = "rrm-T8-0Hl"; */
+"rrm-T8-0Hl.title" = "Расписание";
+
+/* Class = "UIButton"; normalTitle = "Schedule viewing"; ObjectID = "swR-1v-JEy"; */
+"swR-1v-JEy.normalTitle" = "Отложить просмотр";
+
+/* Class = "UILabel"; text = "December 14, 2018"; ObjectID = "vhc-Ak-bk8"; */
+"vhc-Ak-bk8.text" = "December 14, 2018";

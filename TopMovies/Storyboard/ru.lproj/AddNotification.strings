@@ -1,0 +1,6 @@
+
+/* Class = "UIButton"; normalTitle = "Add Notification"; ObjectID = "LB1-pP-N8h"; */
+"LB1-pP-N8h.normalTitle" = "Добавить уведомление";
+
+/* Class = "UIViewController"; title = "AddNotificationController"; ObjectID = "v6b-hl-vJp"; */
+"v6b-hl-vJp.title" = "AddNotificationController";

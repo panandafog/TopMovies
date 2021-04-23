@@ -17,7 +17,7 @@ class MovieService {
         tmp.host = "api.themoviedb.org"
         tmp.queryItems = [
             URLQueryItem(name: "api_key", value: "c7d2a590385fa79c0ac352c37605f9a4"),
-            URLQueryItem(name: "language", value: "ru")
+            URLQueryItem(name: "language", value: "language".localized)
         ]
         return tmp
     }
@@ -31,7 +31,7 @@ class MovieService {
         tmp.path = "/t/p/w\(defaultImageResolution)/"
         tmp.queryItems = [
             URLQueryItem(name: "api_key", value: "c7d2a590385fa79c0ac352c37605f9a4"),
-            URLQueryItem(name: "language", value: "ru")
+            URLQueryItem(name: "language", value: "language".localized)
         ]
         return tmp
     }
@@ -121,13 +121,13 @@ class MovieService {
         
         switch errorType {
         case .noInternet:
-            title = "Not Connected to the internet"
-            message = "Please check internet connection"
+            title = "noInternetAlertTitle".localized
+            message = "noInternetAlertMessage".localized
         case .timeout:
-            title = "Request timeout"
-            message = "Please check internet connection or try to use VPN"
+            title = "timeoutAlertTitle".localized
+            message = "timeoutAlertMessage".localized
         case .unknown:
-            title = "Unknown error"
+            title = "unknownErrorAlertTitle".localized
             message = errorMessage ?? ""
         }
         

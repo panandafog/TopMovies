@@ -12,6 +12,7 @@ class ScheduleCell: UITableViewCell {
     private var tableViewController: ScheduleViewController?
     private var notification: UNNotificationRequest?
     private let notificationService = NotificationService()
+    private var notificationDate: Date?
     
     @IBOutlet var movieTitleLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
@@ -26,19 +27,43 @@ class ScheduleCell: UITableViewCell {
         if let dateComponents = trigger?.dateComponents,
            let notificationDate = Calendar.current.date(from: dateComponents) {
             datePicker.date = notificationDate
+            self.notificationDate = notificationDate
         }
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         
+        //        guard let notification = self.notification else {
+        //            return
+        //        }
+        //        let success = notificationService.updateScheduledMovieWatchNotification(
+        //            newDate: datePicker.date,
+        //            notification: notification,
+        //            controller: tableViewController)
+        //
+        //        if success {
+        //            tableViewController?.updateTableData(completion: nil)
+        //        }
+    }
+    
+    
+    @IBAction func exitFromDatePicker(_ sender: UIDatePicker) {
+        
         guard let notification = self.notification else {
             return
         }
-        notificationService.updateScheduledMovieWatchNotification(
+        let success = notificationService.updateScheduledMovieWatchNotification(
             newDate: datePicker.date,
-            notification: notification)
+            notification: notification,
+            controller: tableViewController)
         
-        tableViewController?.updateTableData(completion: nil)
+        if success {
+            tableViewController?.updateTableData(completion: nil)
+        } else {
+            if let notificationDate = self.notificationDate {
+                datePicker.date = notificationDate
+            }
+        }
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {

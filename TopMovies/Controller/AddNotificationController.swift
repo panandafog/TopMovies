@@ -32,19 +32,14 @@ class AddNotificationController: UIViewController {
             return
         }
         
-        guard datePicker.date > Date() else {
-            showIncorrectDateAlert()
-            return
-        }
+        let success = notificationService.scheduleMovieWatchNotification(
+            movie: movie,
+            date: datePicker.date,
+            controller: self)
         
-        notificationService.scheduleMovieWatchNotification(movie: movie, date: datePicker.date)
-        mainController?.dismiss(animated: true, completion: {
-        })
-    }
-    
-    private func showIncorrectDateAlert() {
-        let alert = UIAlertController(title: "Incorrect date", message: "Please select date after today", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
+        if success {
+            mainController?.dismiss(animated: true, completion: {
+            })
+        }
     }
 }
