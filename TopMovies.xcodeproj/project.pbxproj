@@ -26,6 +26,9 @@
 		0B828CC02631D8500073D399 /* AddNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B828CBF2631D8500073D399 /* AddNotificationController.swift */; };
 		0B828CC52631DDC30073D399 /* DetailedMovieInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B828CC42631DDC30073D399 /* DetailedMovieInfo.storyboard */; };
 		0B828CCA2631E3020073D399 /* DetailedMovieInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B828CC92631E3020073D399 /* DetailedMovieInfoController.swift */; };
+		0B828CCF26322B410073D399 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B828CCE26322B410073D399 /* NotificationService.swift */; };
+		0B828CDE263231250073D399 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B828CDD263231250073D399 /* ScheduleViewController.swift */; };
+		0B828CE32632318D0073D399 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B828CE22632318D0073D399 /* ScheduleCell.swift */; };
 		164A2372EF2A962DD9113C98 /* Pods_TopMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262EC3788B28F7DF00F3F43 /* Pods_TopMoviesTests.framework */; };
 		35DE869D0726D371854891DA /* Pods_TopMovies_TopMoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E64D7BE9B37ABD5726592CF /* Pods_TopMovies_TopMoviesUITests.framework */; };
 		F804DF0C28603BCBC8ED6938 /* Pods_TopMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43C4D3153DE840EEBAD08D5 /* Pods_TopMovies.framework */; };
@@ -75,6 +78,9 @@
 		0B828CBF2631D8500073D399 /* AddNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationController.swift; sourceTree = "<group>"; };
 		0B828CC42631DDC30073D399 /* DetailedMovieInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailedMovieInfo.storyboard; sourceTree = "<group>"; };
 		0B828CC92631E3020073D399 /* DetailedMovieInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMovieInfoController.swift; sourceTree = "<group>"; };
+		0B828CCE26322B410073D399 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0B828CDD263231250073D399 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		0B828CE22632318D0073D399 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		0BE69A8A7705EB898B5DA666 /* Pods-TopMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMovies.debug.xcconfig"; path = "Target Support Files/Pods-TopMovies/Pods-TopMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		311FE183FA709281AA40ED11 /* Pods-TopMovies-TopMoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMovies-TopMoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-TopMovies-TopMoviesUITests/Pods-TopMovies-TopMoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3E64D7BE9B37ABD5726592CF /* Pods_TopMovies_TopMoviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopMovies_TopMoviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +181,7 @@
 				0B828C2A26317F880073D399 /* MainViewController.swift */,
 				0B828CBF2631D8500073D399 /* AddNotificationController.swift */,
 				0B828CC92631E3020073D399 /* DetailedMovieInfoController.swift */,
+				0B828CDD263231250073D399 /* ScheduleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				0B828C5E263181AC0073D399 /* MovieCell.swift */,
+				0B828CE22632318D0073D399 /* ScheduleCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				0B828C7026319DA60073D399 /* MovieService.swift */,
 				0B828C872631B5920073D399 /* MovieRepository.swift */,
 				0B828C942631BEAA0073D399 /* MovieFacade.swift */,
+				0B828CCE26322B410073D399 /* NotificationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -483,8 +492,11 @@
 			files = (
 				0B828C952631BEAA0073D399 /* MovieFacade.swift in Sources */,
 				0B828C882631B5920073D399 /* MovieRepository.swift in Sources */,
+				0B828CCF26322B410073D399 /* NotificationService.swift in Sources */,
 				0B828C7926319E770073D399 /* MovieModel.swift in Sources */,
+				0B828CE32632318D0073D399 /* ScheduleCell.swift in Sources */,
 				0B828C7126319DA60073D399 /* MovieService.swift in Sources */,
+				0B828CDE263231250073D399 /* ScheduleViewController.swift in Sources */,
 				0B828C2B26317F880073D399 /* MainViewController.swift in Sources */,
 				0B828CC02631D8500073D399 /* AddNotificationController.swift in Sources */,
 				0B828C8D2631B6AE0073D399 /* MovieRealm.swift in Sources */,

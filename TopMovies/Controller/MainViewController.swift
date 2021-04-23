@@ -44,7 +44,7 @@ extension MainViewController: UITableViewDataSource {
         }
         
         let movie = movies[indexPath.row]
-        cell.setup(with: movie, controller: self, index: indexPath)
+        cell.setup(with: movie, controller: self)
 
         return cell
     }

@@ -47,7 +47,7 @@ class DetailedMovieInfoController: UIViewController {
             return
         }
         
-        viewController.movie = self.movie
+        viewController.setup(with: movie, controller: mainController)
         mainController?.dismiss(animated: true, completion: {
             self.mainController?.navigationController?.present(viewController, animated: true)
         })

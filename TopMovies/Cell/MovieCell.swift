@@ -24,7 +24,7 @@ class MovieCell: UITableViewCell {
         posterImageView.kf.cancelDownloadTask()
     }
 
-    func setup(with movie: MovieModel, controller: MainViewController, index: IndexPath) {
+    func setup(with movie: MovieModel, controller: MainViewController) {
         self.movie = movie
         self.mainController = controller
         
@@ -50,7 +50,7 @@ class MovieCell: UITableViewCell {
                 return
         }
         
-        viewController.movie = self.movie
+        viewController.setup(with: movie, controller: mainController)
         mainController?.navigationController?.present(viewController, animated: true)
     }
 }

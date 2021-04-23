@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxj-Cm-fVI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jGO-eF-jVU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Movies-->
         <scene sceneID="N2l-jt-oIA">
             <objects>
                 <navigationController id="bxj-Cm-fVI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" image="rectangle.grid.1x2" catalog="system" id="gkU-Cl-MDU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="381-XT-neX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,6 +24,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RK-YX-QDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="292" y="12"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="GBv-L8-Fpm">
+            <objects>
+                <navigationController id="UwA-wK-JPx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="rrm-T8-0Hl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9QI-Ih-vIx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BBx-SV-VUZ" kind="relationship" relationship="rootViewController" id="LIi-TR-s3O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDf-4e-zOo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="753"/>
+        </scene>
+        <!--Sheduled Notifications-->
+        <scene sceneID="0bb-aa-qIF">
+            <objects>
+                <viewController restorationIdentifier="ScheduleViewController" storyboardIdentifier="ScheduleViewController" id="BBx-SV-VUZ" customClass="ScheduleViewController" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6vD-3o-7x7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dM6-bD-IwQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScheduleCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="119" id="r1f-3d-JQ7" customClass="ScheduleCell" customModule="TopMovies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r1f-3d-JQ7" id="WN3-DS-2f5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spider-Man: Into the Spider-Verse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz0-zE-piN">
+                                                    <rect key="frame" x="20" y="11" width="374" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kMx-WV-aJW">
+                                                    <rect key="frame" x="20" y="56" width="215" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="215" id="T9V-YZ-CTW"/>
+                                                        <constraint firstAttribute="height" constant="43" id="gIP-bQ-GX0"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="r1f-3d-JQ7" eventType="valueChanged" id="fRE-mP-Kme"/>
+                                                    </connections>
+                                                </datePicker>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-Ya-JeB">
+                                                    <rect key="frame" x="364" y="62" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="8KW-Le-VUr"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Ys4-t3-1LI"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed:" destination="r1f-3d-JQ7" eventType="touchUpInside" id="1gF-5r-FVq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Uz0-zE-piN" firstAttribute="trailing" secondItem="WN3-DS-2f5" secondAttribute="trailingMargin" id="9E8-Re-bbF"/>
+                                                <constraint firstItem="Uz0-zE-piN" firstAttribute="top" secondItem="WN3-DS-2f5" secondAttribute="topMargin" id="B9x-0e-mQI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MeY-Ya-JeB" secondAttribute="bottom" constant="16" id="MKz-kf-ZcO"/>
+                                                <constraint firstItem="Uz0-zE-piN" firstAttribute="leading" secondItem="WN3-DS-2f5" secondAttribute="leadingMargin" id="Unb-uI-DUA"/>
+                                                <constraint firstItem="MeY-Ya-JeB" firstAttribute="top" secondItem="Uz0-zE-piN" secondAttribute="bottom" constant="27" id="Xr0-99-8Ej"/>
+                                                <constraint firstItem="MeY-Ya-JeB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kMx-WV-aJW" secondAttribute="trailing" id="eyc-3v-Yiy"/>
+                                                <constraint firstItem="kMx-WV-aJW" firstAttribute="leading" secondItem="WN3-DS-2f5" secondAttribute="leadingMargin" id="fSr-mm-sNM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kMx-WV-aJW" secondAttribute="bottom" constant="9" id="jHf-p0-Ope"/>
+                                                <constraint firstItem="MeY-Ya-JeB" firstAttribute="trailing" secondItem="WN3-DS-2f5" secondAttribute="trailingMargin" id="qEb-Qk-YE2"/>
+                                                <constraint firstItem="kMx-WV-aJW" firstAttribute="top" secondItem="Uz0-zE-piN" secondAttribute="bottom" constant="21" id="wKL-j8-1b1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datePicker" destination="kMx-WV-aJW" id="rHe-Uk-Cdi"/>
+                                            <outlet property="movieTitleLabel" destination="Uz0-zE-piN" id="c2P-rw-b4u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cjp-Je-pkp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dM6-bD-IwQ" firstAttribute="bottom" secondItem="cjp-Je-pkp" secondAttribute="bottom" id="4kg-k8-IgV"/>
+                            <constraint firstItem="dM6-bD-IwQ" firstAttribute="leading" secondItem="cjp-Je-pkp" secondAttribute="leading" id="5Xg-vV-MyH"/>
+                            <constraint firstItem="dM6-bD-IwQ" firstAttribute="top" secondItem="cjp-Je-pkp" secondAttribute="top" id="tOb-fp-oI3"/>
+                            <constraint firstItem="dM6-bD-IwQ" firstAttribute="trailing" secondItem="cjp-Je-pkp" secondAttribute="trailing" id="u9e-Xi-z8Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sheduled Notifications" id="q9m-we-lnc"/>
+                    <connections>
+                        <outlet property="tableView" destination="dM6-bD-IwQ" id="o5e-VF-54Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a56-aS-YZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202.8985507246377" y="752.67857142857144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QNk-5d-wZ0">
+            <objects>
+                <tabBarController id="jGO-eF-jVU" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMQ-8D-iab">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bxj-Cm-fVI" kind="relationship" relationship="viewControllers" id="Ucz-QB-O3a"/>
+                        <segue destination="UwA-wK-JPx" kind="relationship" relationship="viewControllers" id="K15-Nc-7KR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPO-jL-B8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-980" y="11"/>
         </scene>
         <!--TopMovies-->
         <scene sceneID="keH-jo-16T">
@@ -126,6 +247,8 @@ dimension.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="rectangle.grid.1x2" catalog="system" width="128" height="101"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

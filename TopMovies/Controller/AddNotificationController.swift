@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddNotificationController: UIViewController {
     
-    var movie: MovieModel?
+    private var movie: MovieModel?
+    private var mainController: MainViewController?
+    private var notificationService = NotificationService()
     
     @IBOutlet var datePicker: UIDatePicker!
     
@@ -19,7 +22,18 @@ class AddNotificationController: UIViewController {
         datePicker?.locale = .current
     }
     
+    func setup(with movie: MovieModel?, controller: MainViewController?) {
+        self.movie = movie
+        self.mainController = controller
+    }
+    
     @IBAction func addNotificationButtonPressed(_ sender: UIButton) {
-        print("Selected date/time:", datePicker.date)
+        guard let movie = self.movie else {
+            return
+        }
+        
+        notificationService.scheduleMovieWatchNotification(movie: movie, date: datePicker.date)
+        mainController?.dismiss(animated: true, completion: {
+        })
     }
 }
