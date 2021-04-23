@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
-    private let facade = MovieFacade()
+    private let facade = MovieFacadeImpl()
     private var movies = [MovieModel]()
     
     override func viewDidLoad() {

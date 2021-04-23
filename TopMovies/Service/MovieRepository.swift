@@ -7,7 +7,14 @@
 
 import RealmSwift
 
-class MovieRepository {
+protocol MovieRepository {
+    func save(_ movies: [MovieModel])
+    func getMovies() -> Results<MovieRealm>
+    func clear()
+    func count() -> Int
+}
+
+class MovieRepositoryImpl: MovieRepository {
     private let configuration: Realm.Configuration
 
     var realm: Realm {

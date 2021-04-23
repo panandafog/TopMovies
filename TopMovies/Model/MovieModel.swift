@@ -62,3 +62,9 @@ struct MovieModel: Codable {
         case voteCount = "vote_count"
     }
 }
+
+extension MovieModel: Equatable {
+    static func == (lhs: MovieModel, rhs: MovieModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}
