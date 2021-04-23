@@ -8,26 +8,35 @@
 import RealmSwift
 
 class MovieFacade {
-    typealias UpdateMoviesCompletion = ([MovieModel]?) -> Void
+    typealias UpdateMoviesDataChangedCompletion = ([MovieModel]?) -> Void
+    typealias UpdateMoviesRequestCompletion = () -> Void
     
     let movieRepository = MovieRepository(configuration: .defaultConfiguration)
     let movieService = MovieService()
     private var movieToken: NotificationToken?
 
-    func loadMore() {
+    func loadMore(controller: UIViewController?,
+                  requestCompletion: UpdateMoviesRequestCompletion? = nil) {
         let originalMovieCount = self.movieRepository.count()
-        movieService.getMovies(newPage: true, completion: { movies in
-            guard let movies = movies else { return }
+        movieService.getMovies(newPage: true, controller: controller, completion: { movies in
+            
+            guard let movies = movies else {
+                return
+            }
             self.movieRepository.save(movies)
             if self.movieRepository.count() <= originalMovieCount {
-                self.loadMore()
+                self.loadMore(controller: controller)
             }
         })
     }
 
-    func getMovies(completion: @escaping UpdateMoviesCompletion) {
-        movieService.getMovies(newPage: false, completion: { movies in
-            guard let movies = movies else { return }
+    func getMovies(controller: UIViewController?, dataChangedCompletion: @escaping UpdateMoviesDataChangedCompletion, requestCompletion: UpdateMoviesRequestCompletion? = nil) {
+        movieService.getMovies(newPage: false, controller: controller, completion: { movies in
+            requestCompletion?()
+            
+            guard let movies = movies else {
+                return
+            }
             self.movieRepository.save(movies)
         })
         
@@ -40,7 +49,7 @@ class MovieFacade {
                     models.append(model)
                 }
             }
-            completion(models)
+            dataChangedCompletion(models)
         }
     }
 }

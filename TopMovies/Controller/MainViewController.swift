@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     
     private let facade = MovieFacade()
     private var movies = [MovieModel]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,28 +23,31 @@ class MainViewController: UIViewController {
         
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-
-        updateTableData(completion: nil)
+        
+        self.tableView.refreshControl?.beginRefreshing()
+        updateTableData()
     }
     
-    func updateTableData(completion: (() -> ())?) {
-        facade.getMovies(completion: { newMovies in
+    func updateTableData() {
+        
+        facade.getMovies(controller: self, dataChangedCompletion: { newMovies in
+            
             guard let newMovies = newMovies else { return }
+            
             self.movies = newMovies
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            completion?()
+        }, requestCompletion: {
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
+            }
         })
     }
     
     @objc func handleRefreshControl() {
         facade.movieRepository.clear()
-        updateTableData(completion: {
-            DispatchQueue.main.async {
-                self.tableView.refreshControl?.endRefreshing()
-            }
-        })
+        updateTableData()
     }
 }
 
@@ -54,7 +57,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.movies.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as? MovieCell else {
             fatalError("Table view is not configured")
@@ -62,7 +65,7 @@ extension MainViewController: UITableViewDataSource {
         
         let movie = movies[indexPath.row]
         cell.setup(with: movie, controller: self)
-
+        
         return cell
     }
 }
@@ -71,15 +74,15 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard indexPath.row == movies.count - 1 else { return }
-        facade.loadMore()
+        facade.loadMore(controller: self)
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = UIStoryboard(name: "DetailedMovieInfo", bundle: nil)
-            .instantiateViewController(withIdentifier: "DetailedMovieInfoViewController") as? DetailedMovieInfoController else {
-                return
+                .instantiateViewController(withIdentifier: "DetailedMovieInfoViewController") as? DetailedMovieInfoController else {
+            return
         }
-
+        
         let movie = movies[indexPath.row]
         viewController.setup(with: movie, controller: self, index: indexPath)
         

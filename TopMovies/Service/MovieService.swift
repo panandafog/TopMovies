@@ -35,7 +35,7 @@ class MovieService {
         ]
         return tmp
     }
-
+    
     private var currentPage: Int = 1
     private var popularMoviesUrl: URL? {
         var tmp = MovieService.defaultURLComponents
@@ -43,38 +43,102 @@ class MovieService {
         tmp.queryItems?.append(URLQueryItem(name: "page", value: "\(self.currentPage)"))
         return tmp.url
     }
-
-    func getMovies(newPage: Bool, completion: @escaping MovieCompletion) {
+    
+    func getMovies(newPage: Bool, controller: UIViewController?, completion: @escaping MovieCompletion) {
+       
+        guard Connectivity.isConnectedToInternet else {
+            self.showErrorAlert(errorType: .noInternet,
+                                  controller: controller)
+            completion(nil)
+            return
+        }
+        
         if !newPage {
             currentPage = 1
         } else {
             currentPage += 1
         }
+        
         guard let url = popularMoviesUrl else {
-            completion(nil)
             return
         }
         
-        AF.request(url, method: .get).responseJSON(completionHandler: { response in
-            switch response.result {
-            case .success(let value):
-                print ("success")
+        AF.request(url, method: .get)
+            .responseJSON(completionHandler: { response in
                 
-                guard let data = response.data else {
+                switch response.result {
+                case .success(let value):
+                    
+                    guard let data = response.data else {
+                        completion(nil)
+                        return
+                    }
+                    guard let page = try? JSONDecoder().decode(MovieListPageModel.self, from: data) else {
+                        completion(nil)
+                        return
+                    }
+                    
+                    completion(page.results)
+                    
+                case .failure(let error):
+                    
+                    switch error {
+                    case .sessionTaskFailed(let urlError as URLError):
+                        
+                        switch urlError.code {
+                        
+                        case .notConnectedToInternet, .dataNotAllowed:
+                            self.showErrorAlert(errorType: .noInternet,
+                                                  controller: controller)
+                        case .timedOut:
+                            self.showErrorAlert(errorType: .timeout,
+                                                  controller: controller)
+                        default:
+                            print("urlError: \(urlError)")
+                            self.showErrorAlert(errorType: .unknown,
+                                                  controller: controller,
+                                                  errorMessage: error.errorDescription)
+                        }
+                    default:
+                        print("error: \(error)")
+                        self.showErrorAlert(errorType: .unknown,
+                                              controller: controller,
+                                              errorMessage: error.errorDescription)
+                    }
+                    
                     completion(nil)
-                    return
                 }
-                guard let page = try? JSONDecoder().decode(MovieListPageModel.self, from: data) else {
-                    completion(nil)
-                    return
-                }
-                
-                completion(page.results)
-                
-            case .failure(let error):
-                print ("error")
-                completion(nil)
-            }
-        })
+            })
+    }
+    
+    private func showErrorAlert(errorType: ErrorType, controller: UIViewController?, errorMessage: String? = nil) {
+        guard let controller = controller else {
+            return
+        }
+        
+        var title = ""
+        var message = ""
+        
+        switch errorType {
+        case .noInternet:
+            title = "Not Connected to the internet"
+            message = "Please check internet connection"
+        case .timeout:
+            title = "Request timeout"
+            message = "Please check internet connection or try to use VPN"
+        case .unknown:
+            title = "Unknown error"
+            message = errorMessage ?? ""
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
+    enum ErrorType {
+        case noInternet
+        case timeout
+        case unknown
     }
 }

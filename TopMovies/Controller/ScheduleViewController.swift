@@ -17,7 +17,7 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 250
+        tableView.rowHeight = UITableView.automaticDimension;
         tableView.dataSource = self
         tableView.delegate = self
         
