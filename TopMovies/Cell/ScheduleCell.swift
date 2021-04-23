@@ -38,7 +38,7 @@ class ScheduleCell: UITableViewCell {
             newDate: datePicker.date,
             notification: notification)
         
-        tableViewController?.updateTableData()
+        tableViewController?.updateTableData(completion: nil)
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
@@ -48,6 +48,6 @@ class ScheduleCell: UITableViewCell {
         }
         notificationService.removeScheduledMovieWatchNotification([notification])
         
-        tableViewController?.updateTableData()
+        tableViewController?.updateTableData(completion: nil)
     }
 }

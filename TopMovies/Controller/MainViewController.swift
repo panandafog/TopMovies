@@ -21,11 +21,28 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+
+        updateTableData(completion: nil)
+    }
+    
+    func updateTableData(completion: (() -> ())?) {
         facade.getMovies(completion: { newMovies in
             guard let newMovies = newMovies else { return }
             self.movies = newMovies
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+            completion?()
+        })
+    }
+    
+    @objc func handleRefreshControl() {
+        facade.movieRepository.clear()
+        updateTableData(completion: {
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
             }
         })
     }

@@ -29,7 +29,17 @@ class NotificationService {
     
     func getScheduledMovieWatchNotifications(completion: @escaping ([UNNotificationRequest]) -> ()) {
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { notifications in
-            completion(notifications)
+            
+            completion(notifications.sorted(by: {
+                if let lhsTrigger = $0.trigger as? UNCalendarNotificationTrigger,
+                   let lhsNotificationDate = Calendar.current.date(from: lhsTrigger.dateComponents),
+                   let rhsTrigger = $1.trigger as? UNCalendarNotificationTrigger,
+                   let rhsNotificationDate = Calendar.current.date(from: rhsTrigger.dateComponents) {
+                    
+                    return lhsNotificationDate < rhsNotificationDate
+                }
+                return true
+            }))
         })
     }
     

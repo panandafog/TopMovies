@@ -21,14 +21,26 @@ class ScheduleViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        updateTableData()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+        
+        updateTableData(completion: nil)
     }
     
-    func updateTableData() {
+    func updateTableData(completion: (() -> ())?) {
         service.getScheduledMovieWatchNotifications(completion: { notifications in
             self.notifications = notifications
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+            completion?()
+        })
+    }
+    
+    @objc func handleRefreshControl() {
+        updateTableData(completion: {
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
             }
         })
     }
