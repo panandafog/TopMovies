@@ -13,8 +13,8 @@
 
 ## Скриншоты
 <img src="https://github.com/panandafog/TopMovies/blob/main/Images/ru/screen1.png" width="300">
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/ru/screen1.png" width="300">
-<img src="https://github.com/panandafog/TopMovies/blob/main/Images/ru/screen1.png" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/ru/screen2.png" width="300">
+<img src="https://github.com/panandafog/TopMovies/blob/main/Images/ru/screen3.png" width="300">
 
 ### This document in other languages
 
