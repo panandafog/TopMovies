@@ -203,22 +203,43 @@ dimension.</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-p3-IWR">
+                                                    <rect key="frame" x="155" y="233" width="40" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="NJ2-J4-XiK"/>
+                                                        <constraint firstAttribute="height" constant="15" id="z0I-og-bcZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HkJ-W9-HxN">
+                                                    <rect key="frame" x="155" y="250" width="94" height="4"/>
+                                                </progressView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="top" secondItem="MV9-sO-nm3" secondAttribute="bottom" constant="8" symbolic="YES" id="2QW-aO-so2"/>
                                                 <constraint firstAttribute="bottom" secondItem="gnA-d2-QfZ" secondAttribute="bottom" id="3xO-rD-5gm"/>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="top" secondItem="dnc-yh-bai" secondAttribute="bottom" constant="8" symbolic="YES" id="6qD-Ac-c1r"/>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="6qg-tz-8D2"/>
+                                                <constraint firstItem="HkJ-W9-HxN" firstAttribute="top" secondItem="Nom-p3-IWR" secondAttribute="bottom" constant="2" id="AzB-eK-YKh"/>
+                                                <constraint firstItem="HkJ-W9-HxN" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="CTR-TM-iri"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="13.5" id="EbM-E0-UW1"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nom-p3-IWR" secondAttribute="trailing" constant="5" id="FBE-Ea-7OA"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="topMargin" id="FGT-g1-OZe"/>
                                                 <constraint firstItem="gnA-d2-QfZ" firstAttribute="top" secondItem="Y2g-TI-OCA" secondAttribute="top" id="H2r-mO-6Mi"/>
                                                 <constraint firstItem="dnc-yh-bai" firstAttribute="top" secondItem="vhc-Ak-bk8" secondAttribute="bottom" constant="8" symbolic="YES" id="HQv-xg-VLr"/>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="leading" secondItem="MV9-sO-nm3" secondAttribute="leading" id="IbG-kr-kJD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HkJ-W9-HxN" secondAttribute="bottom" constant="4" id="Kx7-9q-TIa"/>
                                                 <constraint firstItem="dnc-yh-bai" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="PGB-Pe-52K"/>
                                                 <constraint firstItem="gnA-d2-QfZ" firstAttribute="leading" secondItem="Y2g-TI-OCA" secondAttribute="leading" id="U3V-ZO-ctD"/>
+                                                <constraint firstItem="Nom-p3-IWR" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="VCu-92-slZ"/>
+                                                <constraint firstItem="swR-1v-JEy" firstAttribute="leading" secondItem="HkJ-W9-HxN" secondAttribute="trailing" constant="25" id="X9o-KI-cer"/>
                                                 <constraint firstItem="dnc-yh-bai" firstAttribute="leading" secondItem="gnA-d2-QfZ" secondAttribute="trailing" constant="14" id="fNe-e4-VFb"/>
                                                 <constraint firstItem="vhc-Ak-bk8" firstAttribute="trailing" secondItem="MV9-sO-nm3" secondAttribute="trailing" id="gzZ-o0-Cqm"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="width" secondItem="gnA-d2-QfZ" secondAttribute="width" multiplier="1.7" id="hoR-NJ-25a"/>
+                                                <constraint firstItem="Nom-p3-IWR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dnc-yh-bai" secondAttribute="bottom" constant="5" id="n4i-0D-BAM"/>
+                                                <constraint firstItem="HkJ-W9-HxN" firstAttribute="top" secondItem="Nom-p3-IWR" secondAttribute="bottom" constant="2" id="p4U-Ie-whq"/>
                                                 <constraint firstItem="MV9-sO-nm3" firstAttribute="trailing" secondItem="Y2g-TI-OCA" secondAttribute="trailingMargin" id="vl4-1B-PCu"/>
                                                 <constraint firstItem="swR-1v-JEy" firstAttribute="bottom" secondItem="Y2g-TI-OCA" secondAttribute="bottomMargin" id="x5y-Ng-BME"/>
                                             </constraints>
@@ -227,6 +248,7 @@ dimension.</string>
                                             <outlet property="dateLabel" destination="vhc-Ak-bk8" id="pjj-b8-UwB"/>
                                             <outlet property="overviewLabel" destination="dnc-yh-bai" id="2HQ-8i-Zch"/>
                                             <outlet property="posterImageView" destination="gnA-d2-QfZ" id="7ax-CE-U3e"/>
+                                            <outlet property="rateBar" destination="HkJ-W9-HxN" id="SAM-mO-DEC"/>
                                             <outlet property="titleLabel" destination="MV9-sO-nm3" id="TlS-u7-2RO"/>
                                         </connections>
                                     </tableViewCell>

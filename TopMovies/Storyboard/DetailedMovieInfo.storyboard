@@ -36,8 +36,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 14, 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-09-aq2">
-                                <rect key="frame" x="177.5" y="247.5" width="216.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018-12-14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-09-aq2">
+                                <rect key="frame" x="305.5" y="247.5" width="88.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="y3A-i4-Jrn"/>
                                 </constraints>
@@ -72,26 +72,47 @@ dimension.</string>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jOv-E7-xV4"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="w4C-He-CrY"/>
                             </scrollView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="asb-kF-sog">
+                                <rect key="frame" x="184.5" y="264.5" width="102.5" height="4"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-C9-3m5">
+                                <rect key="frame" x="184.5" y="247.5" width="40" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="QDg-Zm-mBe"/>
+                                    <constraint firstAttribute="height" constant="15" id="aJq-y2-BhV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ncB-yb-7w0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="asb-kF-sog" firstAttribute="top" secondItem="5E5-C9-3m5" secondAttribute="bottom" constant="2" id="1m9-op-bf3"/>
                             <constraint firstItem="saj-jE-92x" firstAttribute="height" secondItem="ncB-yb-7w0" secondAttribute="height" multiplier="0.25" id="302-8t-bcu"/>
                             <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="War-2S-6Ge" secondAttribute="trailing" constant="20" id="4Gd-Ax-uIi"/>
                             <constraint firstItem="PX3-mt-ZVI" firstAttribute="leading" secondItem="ncB-yb-7w0" secondAttribute="leading" constant="20" id="6qP-n7-d5d"/>
-                            <constraint firstItem="kZz-09-aq2" firstAttribute="leading" secondItem="saj-jE-92x" secondAttribute="trailing" constant="13" id="7R9-Pj-o2Q"/>
+                            <constraint firstItem="asb-kF-sog" firstAttribute="bottom" secondItem="saj-jE-92x" secondAttribute="bottom" id="Bib-a5-fQ0"/>
+                            <constraint firstItem="asb-kF-sog" firstAttribute="leading" secondItem="5E5-C9-3m5" secondAttribute="leading" id="CSi-Di-3Jy"/>
                             <constraint firstItem="PX3-mt-ZVI" firstAttribute="top" secondItem="saj-jE-92x" secondAttribute="bottom" constant="20" id="Hkk-gB-F2T"/>
                             <constraint firstItem="saj-jE-92x" firstAttribute="top" secondItem="ncB-yb-7w0" secondAttribute="top" constant="20" id="JBM-bo-9RJ"/>
                             <constraint firstItem="WGT-r1-pUb" firstAttribute="top" secondItem="PX3-mt-ZVI" secondAttribute="bottom" constant="8" symbolic="YES" id="MdP-Xo-Fsh"/>
+                            <constraint firstItem="5E5-C9-3m5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="War-2S-6Ge" secondAttribute="bottom" constant="5" id="QBC-ac-K59"/>
                             <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="PX3-mt-ZVI" secondAttribute="trailing" constant="20" id="QXA-Pd-sUQ"/>
                             <constraint firstItem="WGT-r1-pUb" firstAttribute="centerX" secondItem="Twz-sO-CLD" secondAttribute="centerX" id="Utq-yz-xTl"/>
+                            <constraint firstItem="asb-kF-sog" firstAttribute="top" secondItem="5E5-C9-3m5" secondAttribute="bottom" constant="2" id="VDE-8r-IhS"/>
+                            <constraint firstItem="asb-kF-sog" firstAttribute="top" secondItem="5E5-C9-3m5" secondAttribute="bottom" constant="2" id="WDa-xU-zhl"/>
                             <constraint firstItem="kZz-09-aq2" firstAttribute="bottom" secondItem="saj-jE-92x" secondAttribute="bottom" id="XpD-5Y-fSa"/>
                             <constraint firstItem="WGT-r1-pUb" firstAttribute="bottom" secondItem="ncB-yb-7w0" secondAttribute="bottom" id="bu0-ZL-Ztm"/>
                             <constraint firstItem="War-2S-6Ge" firstAttribute="width" secondItem="saj-jE-92x" secondAttribute="width" multiplier="1.5" id="cmi-im-xCt"/>
                             <constraint firstItem="War-2S-6Ge" firstAttribute="leading" secondItem="saj-jE-92x" secondAttribute="trailing" constant="13" id="d5e-mE-AWV"/>
                             <constraint firstItem="kZz-09-aq2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="War-2S-6Ge" secondAttribute="bottom" constant="10" id="dFt-Vv-xJu"/>
+                            <constraint firstItem="5E5-C9-3m5" firstAttribute="leading" secondItem="saj-jE-92x" secondAttribute="trailing" constant="20" id="f07-CP-9XJ"/>
                             <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="kZz-09-aq2" secondAttribute="trailing" constant="20" id="gl6-Wc-Cs9"/>
+                            <constraint firstItem="kZz-09-aq2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5E5-C9-3m5" secondAttribute="trailing" constant="5" id="mXV-S3-aSG"/>
                             <constraint firstItem="saj-jE-92x" firstAttribute="leading" secondItem="ncB-yb-7w0" secondAttribute="leading" constant="20" id="uQu-Hj-ieM"/>
+                            <constraint firstItem="ncB-yb-7w0" firstAttribute="trailing" secondItem="asb-kF-sog" secondAttribute="trailing" constant="127" id="v0f-hB-8Jj"/>
                             <constraint firstItem="War-2S-6Ge" firstAttribute="top" secondItem="ncB-yb-7w0" secondAttribute="top" constant="20" id="xwU-bz-KYN"/>
                         </constraints>
                     </view>
@@ -99,6 +120,7 @@ dimension.</string>
                         <outlet property="dateLabel" destination="kZz-09-aq2" id="npE-Br-k1c"/>
                         <outlet property="overviewLabel" destination="vd0-1z-AEU" id="VN3-PU-fQP"/>
                         <outlet property="posterImageView" destination="saj-jE-92x" id="FOr-v4-dfs"/>
+                        <outlet property="rateBar" destination="asb-kF-sog" id="zfW-ME-0sT"/>
                         <outlet property="titleLabel" destination="War-2S-6Ge" id="0Kb-H9-Jfu"/>
                     </connections>
                 </viewController>

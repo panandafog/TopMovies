@@ -16,6 +16,7 @@ class DetailedMovieInfoController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var overviewLabel: UILabel!
+    @IBOutlet var rateBar: UIProgressView!
     
     func setup(with movie: MovieModel, controller: MainViewController, index: IndexPath) {
         self.movie = movie
@@ -29,10 +30,16 @@ class DetailedMovieInfoController: UIViewController {
         dateLabel.text = movie?.releaseDate
         overviewLabel.text = movie?.overview
         
+        if let movie = movie {
+            let rate = (movie.voteAverage - MovieModel.minVoteAverage)
+                / (MovieModel.maxVoteAverage - MovieModel.minVoteAverage)
+            rateBar.setProgress(Float(rate), animated: true)
+        }
+        
         guard let url = movie?.posterURL else { return }
         posterImageView.kf.setImage(with: url) { result in
             switch result {
-            case .success(let value):
+            case .success(_):
                 break
             case .failure(let error):
                 print(error)

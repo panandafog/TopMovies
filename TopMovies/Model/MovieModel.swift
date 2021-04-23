@@ -9,6 +9,10 @@ import Foundation
 
 // MARK: - MovieModel
 struct MovieModel: Codable {
+    
+    static let minVoteAverage = 0.0
+    static let maxVoteAverage = 10.0
+    
     var adult: Bool?
     var backdropPath: String?
     var genreIDS: [Int]?
